@@ -247,38 +247,6 @@
     },
     {
       "parameters": {
-        "modelId": {
-          "__rl": true,
-          "value": "models/gemini-2.5-pro",
-          "mode": "list",
-          "cachedResultName": "models/gemini-2.5-pro"
-        },
-        "messages": {
-          "values": [
-            {
-              "content": "=You are an expert day trader. Using the data below, please give a single, unified trade recommendation—Buy, Sell, or Hold—based on both price action (1m, 15m, 1h candles) and 24h sentiment. Then provide:\n\n• Technical Recommendation (Buy, Sell, or Hold; incorporating candle analysis and sentiment)\n• Entry Price\n• Stop-Loss\n• Target/Exit Price\n\nProvide your answer as plain text with bullet points and clear line breaks.\n\nTechnical Data (candles):\n{{ JSON.stringify($json.data[0]) }}\n\nSentiment Analysis (past 24h):\n{{ JSON.stringify($json.data[1]) }}\n\nEach candle object has:\n\ntimeframe: \"1m\", \"15m\", or \"1h\"\n\ncandles: [openTime, open, high, low, close, volume, …]\n\nSteps for the agent:\n\nGroup candles by timeframe (1m, 15m, 1h).\n\nUse 1m & 15m action + indicators (RSI, MACD, trendlines) for optimal entry.\n\nConfirm trend with 1h data.\n\nFactor in sentiment to refine the Buy/Sell/Hold call.\n\nResponse format (no extra text!):\nTechnical Recommendation: <BUY|SELL|HOLD>\n\nEntry Price: <number>\n\nStop-Loss: <number>\n\nTarget/Exit Price: <number>"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "type": "@n8n/n8n-nodes-langchain.googleGemini",
-      "typeVersion": 1,
-      "position": [
-        1376,
-        832
-      ],
-      "id": "d45b6fbd-ccd8-4e96-bb2a-1f7b1b7edf14",
-      "name": "Message a model",
-      "credentials": {
-        "googlePalmApi": {
-          "id": "f2jStfc74j5IND04",
-          "name": "Google Gemini(PaLM) Api account"
-        }
-      }
-    },
-    {
-      "parameters": {
         "promptType": "define",
         "text": "=You are an expert day trader. Using the data below, please give a single, unified trade recommendation—Buy, Sell, or Hold—based on both price action (1m, 15m, 1h candles) and 24h sentiment. Then provide:\n\n• Technical Recommendation (Buy, Sell, or Hold; incorporating candle analysis and sentiment)\n• Entry Price\n• Stop-Loss\n• Target/Exit Price\n\nProvide your answer as plain text with bullet points and clear line breaks.\n\nTechnical Data (candles):\n{{ JSON.stringify($json.data[0]) }}\n\nSentiment Analysis (past 24h):\n{{ JSON.stringify($json.data[1]) }}\n\nEach candle object has:\n\ntimeframe: \"1m\", \"15m\", or \"1h\"\n\ncandles: [openTime, open, high, low, close, volume, …]\n\nSteps for the agent:\n\nGroup candles by timeframe (1m, 15m, 1h).\n\nUse 1m & 15m action + indicators (RSI, MACD, trendlines) for optimal entry.\n\nConfirm trend with 1h data.\n\nFactor in sentiment to refine the Buy/Sell/Hold call.\n\nResponse format (no extra text!):\nTechnical Recommendation: <BUY|SELL|HOLD>\n\nEntry Price: <number>\n\nStop-Loss: <number>\n\nTarget/Exit Price: <number>",
         "options": {}
@@ -311,24 +279,6 @@
           "name": "Google Gemini(PaLM) Api account"
         }
       }
-    },
-    {
-      "parameters": {
-        "pageId": {
-          "__rl": true,
-          "mode": "url",
-          "value": ""
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.notion",
-      "typeVersion": 2.2,
-      "position": [
-        1776,
-        240
-      ],
-      "id": "0d460a6b-bd46-48fb-9ea8-542996e72a06",
-      "name": "Create a page"
     }
   ],
   "pinData": {},
@@ -469,11 +419,6 @@
         ]
       ]
     },
-    "Message a model": {
-      "main": [
-        []
-      ]
-    },
     "Google Gemini Chat Model": {
       "ai_languageModel": [
         [
@@ -487,13 +432,7 @@
     },
     "AI Agent": {
       "main": [
-        [
-          {
-            "node": "Create a page",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     }
   },
@@ -501,7 +440,7 @@
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "138d644e-dc2f-4a61-b7ab-083c75825782",
+  "versionId": "86897103-59c8-4b6d-b663-fd707e7da030",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "9f30b6e08ab45326f0ca0a1695346b80264ef65a4a2f8ff14bf74d46bdeb21bd"
