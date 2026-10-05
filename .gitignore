@@ -1,0 +1,7 @@
+# Ignore configuration files, environment variables, and node artifacts
+.env
+.DS_Store
+node_modules/
+dist/
+dist-ssr/
+*.local
